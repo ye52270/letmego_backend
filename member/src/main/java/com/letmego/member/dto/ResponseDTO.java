@@ -1,14 +1,16 @@
 package com.letmego.member.dto;
 
-import lombok.Data;
-import lombok.ToString;
+import com.letmego.member.entity.MemberEntity;
+import lombok.*;
 
-@ToString
-@Data
-public class ResponseDTO {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
+import java.util.List;
+
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+public class ResponseDTO<T> {
+    private String error;
+    private List<T> data;
 
 }
