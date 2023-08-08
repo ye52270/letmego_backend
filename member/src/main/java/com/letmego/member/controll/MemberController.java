@@ -32,6 +32,8 @@ public class MemberController {
             if (userDTO == null || userDTO.getPassword() == null) {
                 throw new RuntimeException("Invalid User Info");
             }
+            log.info("User DTO : " + userDTO);
+
             MemberEntity member = MemberEntity
                     .builder()
                     .firstName(userDTO.getFirstName())
@@ -76,7 +78,7 @@ public class MemberController {
                 userDTO.getEmail(),
                 userDTO.getPassword(),
                 passwordEncoder);
-        log.info("member : " + userDTO.toString());
+        log.info("find member : " + member.toString());
 
         if (member != null) {
             final String token = tokenProvider.create(member);

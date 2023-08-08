@@ -34,10 +34,9 @@ public class MemberService {
             final String password,
             final PasswordEncoder passwordEncoder) {
         final MemberEntity originalMember = repository.findByEmail(email);
-        System.out.println("password = " + password);
 
-
-        if(originalMember != null && passwordEncoder.matches(password, originalMember.getPassword())) {
+        if(originalMember != null &&
+                passwordEncoder.matches(password, originalMember.getPassword())) {
             return originalMember;
         }
         return null;
