@@ -3,9 +3,13 @@ package com.example.order.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDateTime;
 
-
+@EntityListeners(AuditingEntityListener.class)
 @ToString
 @Entity
 @Getter
@@ -40,5 +44,16 @@ public class OrderEntity {
 
     @Column(name = "content")
     private String content;
+
+    @Column(name = "status")
+    private String orderStatus;
+
+    @Column(name = "create_date")
+    @CreatedDate
+    private LocalDateTime createDate;
+
+    @Column(name = "modified_date")
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
 
 }

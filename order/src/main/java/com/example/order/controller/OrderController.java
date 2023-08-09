@@ -34,6 +34,13 @@ public class OrderController {
         log.info("orderEntity :" + orderEntity.toString() );
         return orderEntity;
     }
+
+    @GetMapping(path = "/{orderId}")
+    public ResponseEntity<OrderEntity> getOrderDetail(@PathVariable(required = true) String orderId) {
+        OrderEntity orderDetail = orderService.getOrderDetail(orderId);
+        return ResponseEntity.ok().body(orderDetail);
+    }
+
     @PostMapping("/")
     public ResponseEntity<?> createOrder(
             @RequestBody OrderDTO orderDTO

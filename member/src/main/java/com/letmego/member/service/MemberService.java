@@ -22,7 +22,9 @@ public class MemberService {
                 .firstName(memberEntity.getFirstName())
                 .lastName(memberEntity.getLastName())
                 .email(memberEntity.getEmail())
-                .password(memberEntity.getPassword()).build();
+                .password(memberEntity.getPassword())
+                .role(memberEntity.getRole())
+                .build();
 
         log.info("request DTO : " + memberEntity.toString());
 

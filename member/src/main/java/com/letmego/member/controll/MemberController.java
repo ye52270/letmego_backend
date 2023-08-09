@@ -1,7 +1,7 @@
 package com.letmego.member.controll;
 
-import com.letmego.member.dto.UserDTO;
 import com.letmego.member.dto.ResponseDTO;
+import com.letmego.member.dto.UserDTO;
 import com.letmego.member.entity.MemberEntity;
 import com.letmego.member.security.TokenProvider;
 import com.letmego.member.service.MemberService;
@@ -10,9 +10,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
@@ -40,6 +41,7 @@ public class MemberController {
                     .lastName(userDTO.getLastName())
                     .email(userDTO.getEmail())
                     .password(passwordEncoder.encode(userDTO.getPassword()))
+                    .role(userDTO.getUserRole())
                     .build();
 
             MemberEntity createdMember = memberService.createMember(member);
@@ -49,6 +51,7 @@ public class MemberController {
                     .firstName(createdMember.getFirstName())
                     .lastName(createdMember.getLastName())
                     .email(createdMember.getEmail())
+                    .userRole(createdMember.getRole())
                     .build();
 
             log.info("member created ------ : " + createdMember.toString());
@@ -88,6 +91,7 @@ public class MemberController {
                     .lastName(member.getLastName())
                     .email(member.getEmail())
                     .memberId(member.getMemberId())
+                    .userRole(member.getRole())
                     .token(token)
                     .build();
 

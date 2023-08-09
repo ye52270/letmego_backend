@@ -27,10 +27,17 @@ public class OrderService {
                 .startedAt(orderEntity.getStartedAt())
                 .endedAt(orderEntity.getEndedAt())
                 .content(orderEntity.getContent())
+                .createDate(orderEntity.getCreateDate())
+                .modifiedDate(orderEntity.getModifiedDate())
+                .startedAt(orderEntity.getOrderStatus())
                 .build();
 
         log.info("request DTO : " + orderEntity.toString());
         return repository.save(order);
 
+    }
+
+    public OrderEntity getOrderDetail(String orderId) {
+        return repository.findAllByOrderId(orderId);
     }
 }

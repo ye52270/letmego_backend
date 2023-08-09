@@ -26,4 +26,7 @@ public class MemberEntity {
 
     private String password;
     private String authProvider;
+
+    @Column(name = "user_role")
+    private String role;
 }
