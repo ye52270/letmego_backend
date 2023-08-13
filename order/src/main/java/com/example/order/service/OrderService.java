@@ -14,6 +14,10 @@ import java.util.List;
 public class OrderService {
     private final OrderRepository repository;
 
+    public List<OrderEntity> getOrderListAll(){
+        return repository.findAll();
+    }
+
     public List<OrderEntity> getOrderList(final String email){
         return repository.findAllByOrderEmail(email);
     }
@@ -29,7 +33,8 @@ public class OrderService {
                 .content(orderEntity.getContent())
                 .createDate(orderEntity.getCreateDate())
                 .modifiedDate(orderEntity.getModifiedDate())
-                .startedAt(orderEntity.getOrderStatus())
+                .startedAt(orderEntity.getStartedAt())
+                .startedAt("pending")
                 .build();
 
         log.info("request DTO : " + orderEntity.toString());
@@ -38,6 +43,15 @@ public class OrderService {
     }
 
     public OrderEntity getOrderDetail(String orderId) {
+        log.info("get order list : " + orderId);
         return repository.findAllByOrderId(orderId);
+    }
+
+    public OrderEntity updateOrderStatus(String orderId) {
+        log.info("update order status : " + orderId);
+        OrderEntity findedOrderEntity = repository.findAllByOrderId(orderId);
+        findedOrderEntity.setOrderStatus("delivered");
+
+        return repository.save(findedOrderEntity);
     }
 }
