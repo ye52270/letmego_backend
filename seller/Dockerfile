@@ -1,6 +1,6 @@
 FROM cgdevops/openjdk17-jdk
 EXPOSE 8084
-ARG JAR_FILE_PATH=target/*.jar
+ARG JAR_FILE_PATH=seller/target/*.jar
 COPY ${JAR_FILE_PATH} app.jar
 
 
