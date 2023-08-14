@@ -1,5 +1,8 @@
 FROM openjdk:17-alpine AS builder
-ARG JAR_FILE_PATH=build/libs/*.jar
+EXPOSE 8080
+
+WORKDIR /app
+ARG JAR_FILE_PATH=target/*.jar
 COPY ${JAR_FILE_PATH} app.jar
 
 
