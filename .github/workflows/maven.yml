@@ -56,6 +56,9 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       run: |
-        docker build -t letmego:${{steps.current-time.outputs.formattedTime}} -f ${{matrix.sname}}/Dockerfile .
-        docker tag letmego:${{steps.current-time.outputs.formattedTime}} 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
-        docker push 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
+#        docker build -t letmego:${{steps.current-time.outputs.formattedTime}} -f ${{matrix.sname}}/Dockerfile .
+#        docker tag letmego:${{steps.current-time.outputs.formattedTime}} 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
+#        docker push 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
+        docker build -t letmego:${{matrix.sname}} -f ${{matrix.sname}}/Dockerfile .
+        docker tag letmego:${{matrix.sname}} 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{matrix.sname}}
+        docker push 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{matrix.sname}}
