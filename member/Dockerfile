@@ -1,8 +1,5 @@
-FROM cgdevops/openjdk17-jdk
-EXPOSE 8080
-
-WORKDIR /app
-ARG JAR_FILE_PATH=target/*.jar
+FROM openjdk:17-alpine AS builder
+ARG JAR_FILE_PATH=build/libs/*.jar
 COPY ${JAR_FILE_PATH} app.jar
 
 
