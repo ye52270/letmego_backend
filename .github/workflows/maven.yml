@@ -56,6 +56,7 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       run: |
+        working-directory: ./${{matrix.sname}}
         docker build -t letmego:${{steps.current-time.outputs.formattedTime}} .
         docker tag sample:${{steps.current-time.outputs.formattedTime}} 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
         docker push 207797165735.dkr.ecr.${{secrets.AWS_DEFAULT_REGION}}.amazonaws.com/letmego:${{steps.current-time.outputs.formattedTime}}
