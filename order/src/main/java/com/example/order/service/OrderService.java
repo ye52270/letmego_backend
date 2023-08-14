@@ -34,7 +34,7 @@ public class OrderService {
                 .createDate(orderEntity.getCreateDate())
                 .modifiedDate(orderEntity.getModifiedDate())
                 .startedAt(orderEntity.getStartedAt())
-                .startedAt("pending")
+                .orderStatus("pending")
                 .build();
 
         log.info("request DTO : " + orderEntity.toString());

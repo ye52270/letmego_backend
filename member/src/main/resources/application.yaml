@@ -2,16 +2,21 @@ server:
   port: 8080
 
 spring:
-  h2:
-    console:
-      path: /h2-console
-      settings:
-        web-allow-others: true
   datasource:
-    url: jdbc:h2:tcp://localhost/~/Desktop/h2/test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ENC(Ai/cF5+kJiFrVsWYWPwzhi5eQDboqsYAUD8zZUD886SAUL64/KLZ8fXxN/VYcySpXecTLuh7kJCnMvr7+DHkCa5sRUmVZVkdU3nBrOvs9Rpp5n1X8UuuSvjyydPRipDsk8hN8WuAQ+3nhbAuZJ40g5ZDhOjFFVIbeEEq8xYEqBzTN366wvnh2QS4OJ5VN5B9AIa1yKDDOmRtQtx80FLP+g==)
+    username: ENC(TBZ4I0mnT08rDmyR3SqO1mIH/Bu51prLxU7wFA27V++k7PQgJ4aV2C0vI32ibcG7)
+    password: ENC(uhxUK6csd+N1s/VrGPt9K1h2MFtr8Lfp85kKjkqhmwLMi+supuDIx7D4SqSNScZu)
+  #  h2:
+#    console:
+#      path: /h2-console
+#      settings:
+#        web-allow-others: true
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/Desktop/h2/test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
   jpa:
     properties:
       hibernate:
@@ -19,3 +24,5 @@ spring:
         show_sql: true
     hibernate:
       ddl-auto: update
+
+# mysql.cj07fndkeuan.ap-northeast-2.rds.amazonaws.com

@@ -1,17 +1,21 @@
 server:
   port: 8081
-
 spring:
-  h2:
-    console:
-      path: /h2-console
-      settings:
-        web-allow-others: true
   datasource:
-    url: jdbc:h2:tcp://localhost/~/Desktop/h2/test
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql.cj07fndkeuan.ap-northeast-2.rds.amazonaws.com:3306/order?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: admin
+    password: "!garak2446810"
+#  h2:
+#    console:
+#      path: /h2-console
+#      settings:
+#        web-allow-others: true
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/Desktop/h2/test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
   jpa:
     properties:
       hibernate:

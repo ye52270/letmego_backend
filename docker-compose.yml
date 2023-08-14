@@ -1,0 +1,30 @@
+version: "3"
+services:
+  member:
+    build:
+      context: ./member
+      dockerfile: Dockerfile
+    container_name: member
+    ports:
+      - "8080:8080"
+  order:
+    build:
+      context: ./order
+      dockerfile: Dockerfile
+    container_name: order
+    ports:
+      - "8081:8081"
+  products:
+    build:
+      context: ./products
+      dockerfile: Dockerfile
+    container_name: products
+    ports:
+      - "8083:8083"
+  seller:
+    build:
+      context: ./seller
+      dockerfile: Dockerfile
+    container_name: seller
+    ports:
+      - "8084:8084"

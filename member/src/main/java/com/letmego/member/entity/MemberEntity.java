@@ -14,8 +14,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = "email")},name = "MEMBER")
 public class MemberEntity {
     @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
+//    @Column(columnDefinition = "BINARY(16)")
     private String memberId;
 
     private String firstName;

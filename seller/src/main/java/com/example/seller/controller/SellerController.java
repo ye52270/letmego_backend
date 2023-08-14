@@ -5,12 +5,14 @@ import com.example.seller.dto.SellerDTO;
 import com.example.seller.entity.SellerEntity;
 import com.example.seller.service.SellerService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/seller")
 @RequiredArgsConstructor
+@Slf4j
 public class SellerController {
     private final SellerService sellerService;
     @PostMapping("/proposal")
@@ -46,8 +48,12 @@ public class SellerController {
     }
 
     @GetMapping(path = "/proposal/{orderId}")
-    public ResponseEntity<?> getProposal(@PathVariable String orderId) {
+    public ResponseEntity<?> getProposal(@PathVariable(required = true) String orderId) {
+        log.info("get proposal detail : " + orderId);
+
         SellerEntity proposal = sellerService.getProposal(orderId);
+
+        log.info("proposal : " + proposal);
         return ResponseEntity.ok().body(proposal);
     }
 }
