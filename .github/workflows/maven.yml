@@ -21,7 +21,7 @@ jobs:
       max-parallel: 1
       fail-fast: true
       matrix:
-        sname: [member, order, products, seller]
+        sname: [member, order, seller]
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
