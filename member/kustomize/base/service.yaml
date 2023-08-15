@@ -6,7 +6,7 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-path: "/actuator/health"
 spec:
   selector:
-    app: memberk-backend
+    app: member-backend
   type: NodePort
   ports:
     - port: 8080 # 서비스가 생성할 포트
