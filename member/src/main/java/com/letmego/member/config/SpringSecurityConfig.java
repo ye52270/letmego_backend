@@ -37,7 +37,8 @@ public class SpringSecurityConfig {
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
                         .requestMatchers(
                                 "/",
-                                "/auth/**"
+                                "/auth/**",
+                                "/actuator/**"
                         ).permitAll()
 //                        .requestMatchers("/view/setting/admin").hasRole("ADMIN")
 //                        .requestMatchers("/view/setting/user").hasRole("USER")
