@@ -8,4 +8,4 @@ kind: Kustomization
 images:
 - name: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
   newName: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
-  newTag: 97e353f7bc69caaa8ececfccfe96b47523d4c72a
+  newTag: a584c03a8a931b338cf31ad3bb713888b83e68f2
