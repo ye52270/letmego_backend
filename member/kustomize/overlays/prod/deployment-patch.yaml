@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: member-backend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: member-backend
+  template:
+    metadata:
+      labels:
+        app: member-backend
+    spec:
+      containers:
+        - name: member-backend
