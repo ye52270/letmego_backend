@@ -1,11 +1,11 @@
 patchesStrategicMerge:
-  - deployment-patch.yaml
-  - service-patch.yaml
+- deployment-patch.yaml
+- service-patch.yaml
 resources:
-  - ../../base
+- ../../base
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-  - name: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
-    newName: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
-    newTag:
+- name: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
+  newName: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/member
+  newTag: 97e353f7bc69caaa8ececfccfe96b47523d4c72a
