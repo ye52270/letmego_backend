@@ -14,7 +14,7 @@ spec:
         app: seller-backend
     spec:
       containers:
-        - name: order-backend
+        - name: seller-backend
           image: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/seller:latest
           imagePullPolicy: Always
           ports:
