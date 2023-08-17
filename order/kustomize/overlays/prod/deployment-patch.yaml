@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-backend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: order-backend
+  template:
+    metadata:
+      labels:
+        app: order-backend
+    spec:
+      containers:
+        - name: order-backend
