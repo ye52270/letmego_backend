@@ -33,7 +33,7 @@ public class OrderController {
     public List<?> getOrder(@RequestParam(required = true) String email) {
         List<OrderEntity> orderEntity = orderService.getOrderList(email);
         log.info("email param : " + email);
-        log.info("orderEntity :" + orderEntity.toString() );
+        log.info("print orderEntity :" + orderEntity.toString() );
         return orderEntity;
     }
 
