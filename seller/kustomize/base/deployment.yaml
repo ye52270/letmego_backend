@@ -11,11 +11,11 @@ spec:
   template:
     metadata:
       labels:
-        app: order-backend
+        app: seller-backend
     spec:
       containers:
         - name: order-backend
           image: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/seller:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8084
