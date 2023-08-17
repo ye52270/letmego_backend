@@ -9,3 +9,14 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/group.name: eks-ingress-group
     alb.ingress.kubernetes.io/group.order: '3'
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /seller/
+            pathType: Prefix
+            backend:
+              service:
+                name: "seller-backend"
+                port:
+                  number: 8084
