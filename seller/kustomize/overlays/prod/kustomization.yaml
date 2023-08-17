@@ -9,4 +9,4 @@ kind: Kustomization
 images:
 - name: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/seller
   newName: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/seller
-  newTag: b455395c4e95462b58c8e500c1b0b289f04d059b
+  newTag: 8d1b4642305b374cba8ccc158106d851ce10c04a
