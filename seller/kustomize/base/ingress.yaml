@@ -1,7 +1,7 @@
 piVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: "order-backend-ingress"
+  name: "seller-backend-ingress"
   namespace: default
   annotations:
     kubernetes.io/ingress.class: alb
@@ -13,10 +13,10 @@ spec:
   rules:
     - http:
         paths:
-          - path: /order/
+          - path: /seller/
             pathType: Prefix
             backend:
               service:
-                name: "order-backend"
+                name: "seller-backend"
                 port:
-                  number: 8081
+                  number: 8084
