@@ -1,7 +1,6 @@
 patchesStrategicMerge:
 - deployment-patch.yaml
 - service-patch.yaml
-- ingress-patch.yaml
 resources:
 - ../../base
 apiVersion: kustomize.config.k8s.io/v1beta1
