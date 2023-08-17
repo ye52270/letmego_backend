@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: seller-backend
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: "/actuator/health"
+spec:
+  selector:
+    app: seller-backend
+  type: NodePort
+  ports:
+    - port: 8081 # 서비스가 생성할 포트
+      targetPort: 8081 # 서비스가 접근할 pod의 포트
+      protocol: TCP

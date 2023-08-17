@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seller-backend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: seller-backend
+  template:
+    metadata:
+      labels:
+        app: seller-backend
+    spec:
+      containers:
+        - name: seller-backend

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: seller-backend
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: seller-backend
+  template:
+    metadata:
+      labels:
+        app: order-backend
+    spec:
+      containers:
+        - name: order-backend
+          image: 207797165735.dkr.ecr.ap-northeast-2.amazonaws.com/seller:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
